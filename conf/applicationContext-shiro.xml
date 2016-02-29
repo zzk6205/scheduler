@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       					http://www.springframework.org/schema/context
+       					http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/jsp/public/login.jsp" />
+		<property name="successUrl" value="/jsp/public/index.jsp" />
+		<property name="unauthorizedUrl" value="/jsp/public/login.jsp" />
+		<property name="filterChainDefinitions">
+			<value>
+				/skins/** = anon
+				/upload/** = anon
+				/logout = logout
+				/** = authc
+			</value>
+		</property>
+		<property name="filters">
+			<map>
+				<entry key="authc" value-ref="authenticationFilter" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="authenticationRealm" />
+	</bean>
+
+	<bean id="authenticationRealm" class="net.web.base.shiro.AuthRealm" />
+
+	<bean id="authenticationFilter" class="net.web.base.shiro.AuthFilter" />
+
+</beans>

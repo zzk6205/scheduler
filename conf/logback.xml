@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+	<contextName>scheduler</contextName>
+
+	<property name="LOG_DIR" value="D:/logs/scheduler" />
+	<property name="CHARSET" value="UTF-8" />
+
+	<appender name="ROOT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/root.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/root.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="SPRING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/spring.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/spring.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="JDBC" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/jdbc.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/jdbc.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="REDIS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/redis.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/redis.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="VALIDATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/validation.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/validation.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="SCHEDULE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/schedule.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/schedule.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="DRUID" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/druid.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/druid.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="DUBBO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/dubbo.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/dubbo.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="BASE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/base.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/base.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="ROOT" />
+	</root>
+
+	<logger name="org.apache" level="debug" />
+
+	<logger name="org.springframework" level="debug" additivity="false">
+		<appender-ref ref="SPRING" />
+	</logger>
+
+	<logger name="jdbc.sqltiming" level="debug" additivity="false">
+		<appender-ref ref="JDBC" />
+	</logger>
+
+	<logger name="jdbc.sqlonly" level="off" additivity="false">
+		<appender-ref ref="JDBC" />
+	</logger>
+
+	<logger name="jdbc.audit" level="off" additivity="false">
+		<appender-ref ref="JDBC" />
+	</logger>
+
+	<logger name="jdbc.resultset" level="off" additivity="false">
+		<appender-ref ref="JDBC" />
+	</logger>
+
+	<logger name="jdbc.connection" level="off" additivity="false">
+		<appender-ref ref="JDBC" />
+	</logger>
+
+	<logger name="org.springframework.data.redis" level="debug" additivity="false">
+		<appender-ref ref="REDIS" />
+	</logger>
+
+	<logger name="redis" level="debug" additivity="false">
+		<appender-ref ref="REDIS" />
+	</logger>
+
+	<logger name="org.hibernate.validator" level="debug" additivity="false">
+		<appender-ref ref="VALIDATION" />
+	</logger>
+
+	<logger name="org.quartz" level="debug" additivity="false">
+		<appender-ref ref="SCHEDULE" />
+	</logger>
+
+	<logger name="net.web.base.quartz" level="debug" additivity="false">
+		<appender-ref ref="SCHEDULE" />
+	</logger>
+
+	<logger name="net.web.quartz" level="debug" additivity="false">
+		<appender-ref ref="SCHEDULE" />
+	</logger>
+
+	<logger name="com.alibaba.druid" level="debug" additivity="false">
+		<appender-ref ref="DRUID" />
+	</logger>
+
+	<logger name="com.alibaba.dubbo" level="debug" additivity="false">
+		<appender-ref ref="DUBBO" />
+	</logger>
+
+	<logger name="org.apache.zookeeper" level="debug" additivity="false">
+		<appender-ref ref="DUBBO" />
+	</logger>
+
+	<logger name="net.web" level="debug" additivity="false">
+		<appender-ref ref="BASE" />
+	</logger>
+
+</configuration>
